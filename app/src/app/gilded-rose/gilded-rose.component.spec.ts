@@ -24,7 +24,7 @@ describe('GildedRoseComponent', () => {
     expect(compiled.querySelector('p')?.textContent).toContain('gilded-rose works!');
   });
 
-  it('should render quality', () => {
+  it('should render single item', () => {
     const items = [new Item("Sulfuras, Hand of Ragnaros", 10, 10)]
     component.items = items;
 
@@ -32,5 +32,21 @@ describe('GildedRoseComponent', () => {
 
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('li')?.textContent).toContain('Sulfuras, Hand of Ragnaros');
+  });
+
+  it('should render multiple items', () => {
+    const items = [
+      new Item("Sulfuras, Hand of Ragnaros", 10, 10),
+      new Item("Aged Brie", 100, 20),
+    ]
+    component.items = items;
+
+    fixture.detectChanges();
+
+    const compiled = fixture.nativeElement as HTMLElement;
+    let nodes = compiled.querySelectorAll("li");
+    console.log(nodes);
+    expect(nodes[0].textContent).toContain('Sulfuras, Hand of Ragnaros');
+    expect(nodes[1].textContent).toContain('Aged Brie');
   });
 });
