@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { GildedRoseComponent, Item } from './gilded-rose.component';
 
-describe('GildedRoseComponent', () => {
+describe('GildedRoseComponent Basics', () => {
   let component: GildedRoseComponent;
   let fixture: ComponentFixture<GildedRoseComponent>;
 
@@ -49,4 +49,34 @@ describe('GildedRoseComponent', () => {
     expect(nodes[0].textContent).toContain('Sulfuras, Hand of Ragnaros');
     expect(nodes[1].textContent).toContain('Aged Brie');
   });
+});
+
+describe('GildedRoseComponent Kata', () => {
+  let component: GildedRoseComponent;
+  let fixture: ComponentFixture<GildedRoseComponent>;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [GildedRoseComponent]
+    });
+    fixture = TestBed.createComponent(GildedRoseComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should update quality', () => {
+    const items = [
+      new Item("Generic testing item", 1, 20),
+    ]
+    component.items = items;
+    component.updateQuality();
+
+    fixture.detectChanges();
+
+    const compiled = fixture.nativeElement as HTMLElement;
+    let nodes = compiled.querySelectorAll("li");
+    console.log(nodes);
+    expect(nodes[0].textContent).toContain('Quality: 19');
+  });
+
 });
