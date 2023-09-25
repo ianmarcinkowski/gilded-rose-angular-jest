@@ -2,10 +2,8 @@
 
 This is an implementation of
 [Emily Bache's Gilded Rose refactoring kata](https://github.com/emilybache/GildedRose-Refactoring-Kata)
-in an Angular front-end app, but using Jest.  Perhaps one day I'll submit
-this as a PR to the original repo.
-
-This is intended as a pairing exercise with other devs at work.
+in an Angular front-end app, which can be extended during pair programming practice inside of a
+working Angular app.
 
 ## Converting a stock Angular app with Jasmine to using Jest
 
