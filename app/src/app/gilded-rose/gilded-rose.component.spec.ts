@@ -6,8 +6,8 @@ describe('GildedRoseComponent Basics', () => {
   let component: GildedRoseComponent;
   let fixture: ComponentFixture<GildedRoseComponent>;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       declarations: [GildedRoseComponent]
     });
     fixture = TestBed.createComponent(GildedRoseComponent);
@@ -45,7 +45,7 @@ describe('GildedRoseComponent Basics', () => {
 
     const compiled = fixture.nativeElement as HTMLElement;
     let nodes = compiled.querySelectorAll("li");
-    console.log(nodes);
+    // console.log(nodes);
     expect(nodes[0].textContent).toContain('Sulfuras, Hand of Ragnaros');
     expect(nodes[1].textContent).toContain('Aged Brie');
   });
