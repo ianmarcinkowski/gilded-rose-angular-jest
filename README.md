@@ -7,6 +7,10 @@ this as a PR to the original repo.
 
 This is intended as a pairing exercise with other devs at work.
 
+## Converting a stock Angular app with Jasmine to using Jest
+
+https://medium.com/@megha.d.parmar2018/angular-unit-testing-with-jest-2023-2676faa2e564
+
 # The Gilded Rose Problem
 
 See [Gilded Rose Requirements.en.txt](./GildedRoseRequirements.en.txt)
